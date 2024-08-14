@@ -6,11 +6,26 @@ let employee1 = new Employee(1, "Jack", 60000);
 let employee2 = new Employee(2, "Mark", 65000);
 let employee3 = new Employee(3, "Mary", 70000);
 
-const jsonString = JSON.stringify(employee1);
+function appendEmployeeToFile(employee) {
+  let employees = [];
 
-fs.writeFileSync("employee.json", jsonString);
+  if (fs.existsSync("employee.json")) {
+    let fileData = fs.readFileSync("employee.json", "utf8");
+    if (fileData) {
+      employees = JSON.parse(fileData);
+    }
+  }
 
-console.log("JSON file created");
+  employees.push(employee);
+
+  fs.writeFileSync("employee.json", JSON.stringify(employees, null, 2));
+}
+
+appendEmployeeToFile(employee1);
+appendEmployeeToFile(employee2);
+appendEmployeeToFile(employee3);
+
+console.log("JSON file appended");
 
 let fileData = fs.readFileSync("employee.json");
 
