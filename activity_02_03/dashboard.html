@@ -1,0 +1,166 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <!-- ACTIVITY 02 -->
+  <h1>Input Text Demo</h1>
+  <div>
+    <oj-c-input-text
+      id="text-input"
+      value="{{firstname}}"
+      label-hint="Enter first name"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{lastname}}"
+      label-hint="Enter last name"
+      label-edge="inside"
+    ></oj-c-input-text>
+    <h3>
+      Hey! <oj-bind-text value="[[firstname]]"></oj-bind-text>
+      <oj-bind-text value="[[lastname]]"></oj-bind-text>
+    </h3>
+  </div>
+  <h1>Input Number Demo</h1>
+  <div>
+    <oj-c-input-number
+      min="0"
+      max="10000000"
+      step="0"
+      value="{{salary}}"
+      label-hint="min=0, max=100, step=0"
+      label-edge="inside"
+      class="oj-form-control-max-width-md"
+    ></oj-c-input-number>
+    <h3>Salary is <oj-bind-text value="[[salary]]"></oj-bind-text></h3>
+  </div>
+  <h1>Input Password</h1>
+  <div>
+    <oj-form-layout max-columns="2" direction="row">
+      <oj-c-input-password
+        value="{{password}}"
+        label-hint="Enter password"
+      ></oj-c-input-password>
+    </oj-form-layout>
+    <h3>Password is <oj-bind-text value="[[password]]"></oj-bind-text></h3>
+  </div>
+
+  <h1>Input date</h1>
+  <div>
+    <oj-c-input-date-mask
+      id="date"
+      label-hint="Date with Min + Max Restriction"
+      class="oj-form-control-max-width-md"
+      value="{{date}}"
+      min="[[min]]"
+      max="[[max]]"
+    >
+    </oj-c-input-date-mask>
+    <h3>Date is <oj-bind-text value="[[date]]"></oj-bind-text></h3>
+  </div>
+
+  <h1>FORM LAYOUT</h1>
+  <div>
+    <oj-form-layout label-edge="[[labelEdge]]" id="form-container">
+      <oj-input-text
+        id="control1"
+        value="text"
+        label-hint="row 1"
+      ></oj-input-text>
+      <oj-label id="row2group" label-id="row2grouplabel">row 2</oj-label>
+      <oj-form-layout aria-labelledby="row2grouplabel" label-edge="inside">
+        <oj-input-text
+          id="nestedcontrol1"
+          value="text"
+          label-hint="nested row 1"
+        ></oj-input-text>
+        <oj-input-text
+          id="nestedcontrol2"
+          value="text"
+          label-hint="nested row 2"
+        ></oj-input-text>
+        <oj-input-text
+          id="nestedcontrol3"
+          value="text"
+          label-hint="nested row 3"
+        ></oj-input-text>
+      </oj-form-layout>
+      <oj-input-text
+        id="control3"
+        value="text"
+        label-hint="row 3"
+      ></oj-input-text>
+    </oj-form-layout>
+  </div>
+
+  <!-- ACTIVITY 03 -->
+  <h1>Trying Buttons</h1>
+  <div>
+    <oj-c-button id="button1" label="Button 1"></oj-c-button
+    ><oj-c-button id="icon_button2" label="View Profile">
+      <span slot="startIcon" class="oj-ux-ico-avatar"></span>
+    </oj-c-button>
+    <oj-c-button
+      id="chroming_button5"
+      chroming="danger"
+      label="Red Button"
+    ></oj-c-button>
+  </div>
+
+  <h1>Messaging</h1>
+  <div>
+    <div>
+      <oj-c-message-banner
+        data="[[messages]]"
+        type="page"
+        on-oj-close="[[closeMessage]]"
+      ></oj-c-message-banner>
+    </div>
+    <div class="oj-sm-margin-2x-end oj-flex-item">
+      <oj-checkboxset
+        value="{{newMessagesOptions}}"
+        label-hint="CheckBox"
+        label-edge="inside"
+      >
+        <oj-option value="closeAffordance">Close affordance</oj-option>
+        <oj-option value="detail">Detail</oj-option>
+        <oj-option value="sound">Sound</oj-option>
+        <oj-option value="timeStamp">Timestamp</oj-option>
+      </oj-checkboxset>
+    </div>
+  </div>
+
+  <h1>Progress Bar</h1>
+  <div>
+    <oj-c-progress-bar
+      id="progressBar"
+      value="{{progressValue}}"
+    ></oj-c-progress-bar>
+    <div class="oj-sm-margin-4x-vertical"></div>
+    <oj-label-value>
+      <oj-label slot="label" label-id="status">Status</oj-label>
+      <div
+        slot="value"
+        id="loadingRegion"
+        aria-labelledby="status"
+        aria-busy="true"
+        aria-describedby="progressBar"
+      >
+        <oj-bind-text value="[[loadingText]]"></oj-bind-text>
+      </div>
+    </oj-label-value>
+    <oj-c-button
+      id="button1"
+      on-oj-action="[[restartButton]]"
+      label="Restart"
+      :style.display="[[buttonDisplay]]"
+    >
+    </oj-c-button>
+  </div>
+
+  <!-- ACTIVITY 04 -->
+</div>
