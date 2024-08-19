@@ -1,0 +1,32 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1 style="text-align: center">DASHBOARD OF ALL EMPLOYEES</h1>
+  <br />
+  <div style="text-align: center">
+    <oj-table
+      id="table"
+      aria-label="Customers Table"
+      accessibility.row-header="customerId"
+      data="[[dataprovider]]"
+      columns-default='{"sortable": "disabled"}'
+      columns='[{"headerText": "Customer Id", "field": "customerId", "id": "customerId"},
+    {"headerText": "First Name", "field": "fName", "id": "fName"},
+    {"headerText": "Last Name", "field": "lName", "id": "lName"},
+    {"headerText": "Email", "field": "email", "id": "email"},
+    {"headerText": "Status", "field": "status", "id": "status"}]'
+      class="demo-table-container"
+    ></oj-table>
+  </div>
+</div>
+
+<!-- {"headerText": "Address Line 1", "field": "addressLine1", "id": "addressLine1"},
+    {"headerText": "Address Line 2", "field": "addressLine2", "id": "addressLine2"},
+    {"headerText": "Address Line 3", "field": "addressLine3", "id": "addressLine3"},
+    {"headerText": "City", "field": "city", "id": "city"},
+    {"headerText": "State", "field": "state", "id": "state"},
+    {"headerText": "Zipcode", "field": "zip", "id": "zip"},
+    {"headerText": "Phone", "field": "phone", "id": "phone"}, -->

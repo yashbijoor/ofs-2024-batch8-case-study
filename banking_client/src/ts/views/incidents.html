@@ -1,0 +1,33 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>LOGIN</h1>
+  <div>
+    <oj-c-input-text
+      id="text-input"
+      value="{{username}}"
+      label-hint="Enter Username"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-password
+      value="{{password}}"
+      label-hint="Enter password"
+    ></oj-c-input-password
+    ><br /><br />
+    <oj-c-button
+      id="button1"
+      on-oj-action="[[buttonAction]]"
+      label="LOGIN"
+      disabled="[[username() == null || username().trim() == '' || password() == null || password().trim() == '' ]]"
+    ></oj-c-button>
+  </div>
+  <br /><br />
+  <h6>
+    Authenticated Login Status:
+    <oj-bind-text value="[[authenticated]]"></oj-bind-text>
+  </h6>
+</div>

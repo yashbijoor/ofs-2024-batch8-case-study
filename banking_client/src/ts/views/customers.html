@@ -1,0 +1,108 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Registration</h1>
+  <div>
+    <oj-c-input-text
+      id="text-input"
+      value="{{fname}}"
+      label-hint="Enter First Name"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{lname}}"
+      label-hint="Enter Last Name"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{addressLine1}}"
+      label-hint="Enter Address Line 1"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{addressLine2}}"
+      label-hint="Enter Address Line 2"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{addressLine3}}"
+      label-hint="Enter Address Line 3"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{city}}"
+      label-hint="Enter City"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{state}}"
+      label-hint="Enter State"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-number
+      min="0"
+      max="1000000"
+      step="0"
+      value="{{zip}}"
+      label-hint="Enter Zipcode"
+      label-edge="inside"
+    ></oj-c-input-number
+    ><br /><br />
+    <oj-c-input-number
+      min="0"
+      max="9999999999"
+      step="0"
+      value="{{phone}}"
+      label-hint="Enter Phone Number"
+      label-edge="inside"
+    ></oj-c-input-number
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{email}}"
+      label-hint="Enter Email"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-text
+      id="text-input"
+      value="{{username}}"
+      label-hint="Enter Username"
+      label-edge="inside"
+    ></oj-c-input-text
+    ><br /><br />
+    <oj-c-input-password
+      id="text-input"
+      value="{{password}}"
+      label-hint="Enter Password"
+      label-edge="inside"
+    ></oj-c-input-password
+    ><br /><br />
+    <oj-c-button
+      id="button1"
+      on-oj-action="[[buttonAction]]"
+      label="REGISTER"
+    ></oj-c-button>
+  </div>
+  <br /><br />
+  <h6>
+    Registration Status:
+    <oj-bind-text value="[[registered]]"></oj-bind-text>
+  </h6>
+</div>
